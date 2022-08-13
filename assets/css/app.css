@@ -1,57 +1,198 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, b, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+em,
+img,
+u,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+strong,
+section,
+time,
+audio,
+video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  box-sizing: border-box; }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+html {
+  scroll-behavior: smooth; }
 
 body {
+  background: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   line-height: 1; }
 
-ol, ul {
+ol,
+ul,
+li {
   list-style: none; }
 
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
+strong {
+  font-weight: bold; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  width: 100%; }
 
-a {
+a,
+a:hover {
+  text-decoration: none;
   cursor: pointer; }
+
+:focus {
+  outline: 0; }
+
+:hover {
+  transition: .3s ease; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 17px;
+  font: 400 15px/18px 'Roboto';
+  width: 100%; }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #000; }
+
+input[type="submit"],
+input[type="button"],
+button {
+  border: 2px solid #000;
+  text-transform: uppercase;
+  color: #000;
+  font: 400 15px/18px 'Roboto';
+  width: 100%; }
+
+input[type="text"]:placeholder,
+input[type="email"]:placeholder,
+input[type="tel"]:placeholder,
+input[type="search"]:placeholder,
+input[type="url"]:placeholder {
+  color: rgba(0, 0, 0, 0.5); }
+
+input {
+  box-sizing: border-box; }
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5); }
 
 .container {
   width: 1110px;
   margin: 0 auto; }
 
-header section {
-  padding: 20px 0; }
+header {
+  background-color: #FFFFFF;
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99; }
+  header section {
+    background: #FFFFFF;
+    padding: 20px 0; }
+  header .container {
+    justify-content: space-between; }
+  header > .container, header ul {
+    align-items: center;
+    display: flex; }
+  header .container > ul {
+    gap: 20px; }
+  header div {
+    display: none; }
+  header nav li > a {
+    color: #272727;
+    font: 500 16px/19px "Roboto";
+    display: flex;
+    justify-content: center;
+    min-width: 130px;
+    overflow: hidden;
+    padding: 5px 0; }
 
 h1 {
   display: block;
   overflow: hidden;
-  width: 126px;
-  height: 34px; }
+  height: 34px;
+  width: 126px; }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+    max-width: 100%; }
+  header {
+    padding: 0 15px; }
+    header div {
+      display: block; }
+    header nav {
+      display: none; }
+    header .container {
+      padding: 15px; }
+    header nav {
+      position: absolute;
+      top: -300px;
+      transition: 1s ease all; }
+    header nav li > a {
+      justify-content: flex-start;
+      padding-left: 15px; }
+  h1 {
+    transform: translate(15%, 0); }
+  .dropdown {
+    display: block;
+    top: 65px;
+    transition: ease all 1s;
+    z-index: -1; }
+    .dropdown ul {
+      flex-direction: column; } }
